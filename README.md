@@ -26,7 +26,7 @@ The Wikipedia API allows users to analyze Wikipedia articles by providing insigh
 1. **Clone the Repository:**
 
    ```bash
-   git clone <repository_url>
+   git clone https://github.com/itsRkator/wiki-text-analyzer.git
    cd wikipedia_api
    ```
 
