@@ -145,10 +145,3 @@ To run unit tests, use the following command:
 
 ```bash
 python test_app.py
-```
-
-Make sure the virtual environment is activated before running tests.
-
----
-
-This README.md provides a detailed guide on setting up and using the Wikipedia API. If you have any questions or issues, feel free to reach out.

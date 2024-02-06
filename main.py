@@ -12,8 +12,9 @@ WIKIPEDIA_API_URL = "https://en.wikipedia.org/w/api.php"
 
 
 def fetch_wikipedia_text(topic):
-    # Function to fetch the text of a Wikipedia article based on the provided topic
-    # Use Wikipedia API to get the content of the article
+    """Function to fetch the text of a Wikipedia article based on the provided topic
+    Returns the text of the article if found, otherwise returns an empty string
+    """
     params = {
         "action": "query",
         "format": "json",
@@ -33,8 +34,7 @@ def fetch_wikipedia_text(topic):
 
 
 def analyze_word_frequency(text, n):
-    # Function to analyze word frequency in the given text and return the top n frequent words
-    # Tokenize the text into words
+    """Function to analyze word frequency in the given text and return the top n frequent words"""
     words = text.split()
 
     # Calculate word frequency using a dictionary
@@ -54,10 +54,11 @@ def analyze_word_frequency(text, n):
 
 @app.route("/word_frequency", methods=["POST"])
 def word_frequency_analysis():
-    # Endpoint for word frequency analysis with data in the request body
-    data = request.json  # Assuming the data is sent in JSON format
+    """Endpoint for word frequency analysis with data in the request body"""
 
-    # Check if 'topic' and 'n' are present in the request data
+    data = request.json
+
+    # Check if required parameters are present in the request body
     if "topic" not in data or "n" not in data:
         return (
             jsonify({"error": "Missing required parameters in the request body"}),
